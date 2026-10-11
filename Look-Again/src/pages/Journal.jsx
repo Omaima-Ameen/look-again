@@ -12,7 +12,8 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import Button from "../components/Button";
 
-const API_URL = "http://localhost:5000/api/notes";
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 function formatDate(value) {
   if (!value) return "A moment noticed";

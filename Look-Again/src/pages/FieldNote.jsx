@@ -4,6 +4,9 @@ import { ArrowLeft, ArrowUpRight, Leaf } from "lucide-react";
 import { motion } from "motion/react";
 import Button from "../components/Button";
 
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 function FieldNote({ mode, reflection = "", note, onBack, onNewNote, onJournal }) {
   const [generatedNote, setGeneratedNote] = useState(note || null);
   const [generating, setGenerating] = useState(!note);
@@ -36,7 +39,7 @@ function FieldNote({ mode, reflection = "", note, onBack, onNewNote, onJournal }
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/generate-note",
+          `${API_URL}/api/generate-note`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

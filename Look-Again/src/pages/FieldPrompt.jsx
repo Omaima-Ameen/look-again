@@ -11,6 +11,9 @@ import { motion } from "motion/react";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 const modeLabels = {
   alive: "The living world",
   overlooked: "A second look",
@@ -53,7 +56,7 @@ function FieldPrompt({ mode, onBack, onBegin }) {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/generate-prompt",
+          `${API_URL}/api/generate-prompt`,
           {
             method: "POST",
             headers: {
