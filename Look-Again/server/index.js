@@ -354,10 +354,9 @@ Requirements:
     }
   });
 
-  app.listen(PORT, () => {
-    console.log(`Look Again API running at http://localhost:${PORT}`);
-    console.log(`Database: ${databasePath}`);
-  });
+ app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 }
 
 startServer().catch((error) => {
