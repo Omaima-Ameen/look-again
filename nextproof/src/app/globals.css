@@ -1,0 +1,73 @@
+
+@import "tailwindcss";
+
+:root {
+  --background: #f8f7ff;
+  --foreground: #19172e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+}
+
+::selection {
+  background: #ddd6fe;
+  color: #312e81;
+}
+
+.aurora {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(85px);
+  opacity: 0.48;
+  animation: aurora-drift 9s ease-in-out infinite alternate;
+}
+
+.aurora-one {
+  top: 0;
+  left: -100px;
+  background: #c4a1ff;
+}
+
+.aurora-two {
+  top: 30px;
+  right: -100px;
+  background: #9bbdff;
+  animation-delay: -4s;
+}
+
+.aurora-three {
+  top: 250px;
+  left: 35%;
+  width: 300px;
+  height: 300px;
+  background: #ffc4e5;
+  animation-delay: -2s;
+}
+
+@keyframes aurora-drift {
+  0% {
+    transform: translate(0, 0) scale(0.9);
+  }
+  50% {
+    transform: translate(70px, 35px) scale(1.15);
+  }
+  100% {
+    transform: translate(-30px, 65px) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora {
+    animation: none;
+  }
+}
+
