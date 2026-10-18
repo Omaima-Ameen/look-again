@@ -173,15 +173,13 @@ return NextResponse.json(
 );
 
   }  catch (error) {
-  console.error("Analyze route error:", error);
+    console.error("Analyze route error:", error);
 
-  return NextResponse.json(
-    {
-      error: "Unable to process your request.",
-      details:
-        error instanceof Error ? error.message : String(error),
-    },
-    { status: 500 }
-  );
-
-}}
+    return NextResponse.json(
+      {
+        error: "Unable to process your request. Please try again.",
+      },
+      { status: 500 }
+    );
+  }
+}
